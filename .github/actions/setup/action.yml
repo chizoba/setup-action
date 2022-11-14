@@ -1,0 +1,16 @@
+name: 'Setup'
+description: 'Setup'
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Setup Java
+      uses: actions/setup-java@v2
+      with:
+        distribution: "adopt"
+        java-version: "11"
+
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
